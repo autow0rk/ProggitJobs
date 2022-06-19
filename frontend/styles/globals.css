@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+  @apply underline text-blue-600 hover:text-blue-800 visited:text-purple-600;
+}
+
+.fadeIn {
+  animation-name: fadeTest;
+  animation-duration: 0.8s;
+}
+
+@keyframes fadeTest {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
