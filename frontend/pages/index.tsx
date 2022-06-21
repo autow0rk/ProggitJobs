@@ -15,9 +15,11 @@ type JobData = {
   subredditFilters: string[]
 }
 
-const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_PROD_API_BASE_URL || "http://localhost:5000"
-});
+// const api = axios.create({
+//   baseURL: process.env.NEXT_PUBLIC_PROD_API_BASE_URL || "http://localhost:5000"
+// });
+
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_PROD_API_BASE_URL || "http://localhost:5000";
 
 const Home: NextPage = () => {
   const [subredditFilters, setSubredditFilters] = useState<string[]>([]);
@@ -122,7 +124,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     async function getJobData(){
-      await api('/allJobs').then((res) => {
+      await axios('/allJobs').then((res) => {
         setJobData(res.data);
         setFilteredJobs(res.data.jobs);
       });
