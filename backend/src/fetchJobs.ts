@@ -52,11 +52,8 @@ const searchOptionsReactJSJobs : SearchOptions = {
       data: reactJSJobRecords,
       skipDuplicates: true
     });
-
   } catch (err) {
     console.log('caught an error: ', err)
   }
 
 }
-
-fetchJobs(); // called once when the TS server is initially run, and then is called later on from a cron job
