@@ -1,0 +1,8 @@
+{
+  "cron": [
+    {
+      "command": "node ./app/dist/fetchJobs.js",
+      "schedule": "@reboot"
+    }
+  ]
+}
