@@ -63,8 +63,6 @@ const Home: NextPage = () => {
   }
 
   function filterBySubreddit(jobs: JobPosting[]): JobPosting[] | null {
-    console.log('the jobs to filter: ', 'length is: ', jobs.length)
-
     if(subredditFilters.length === 0){
       return jobs;
     }
@@ -120,7 +118,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     async function getJobData(){
-      await axios('http://localhost:5000/allJobs').then((res) => {
+      await axios((process.env.PROD_API_BASE_URL ? process.env.PROD_API_BASE_URL : process.env.NEXT_PUBLIC_LOCAL_API_BASE_URL) + '/allJobs').then((res) => {
         setJobData(res.data);
         setFilteredJobs(res.data.jobs);
       });

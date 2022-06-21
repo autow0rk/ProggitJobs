@@ -6,7 +6,7 @@ interface Props {
     setSearchBody: Dispatch<SetStateAction<string>>
 }
 
-const searchBody: FC<Props> = ({searchBody, setSearchBody}) => {
+const SearchBody: FC<Props> = ({searchBody, setSearchBody}) => {
 
     const [userSearchInput, setUserSearchInput] = useState<string>('');
 
@@ -42,4 +42,4 @@ return (
 );
 }
 
-export default searchBody;
+export default SearchBody;
