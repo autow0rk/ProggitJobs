@@ -1,11 +1,11 @@
 {
   "cron": [
     {
-      "command": "node ./app/dist/fetchJobs.js",
+      "command": "node ./app/dist/deleteOldJobsAndFetchNewJobs.js",
       "schedule": "@weekly"
     }, 
     {
-      "command": "node ./app/dist/fetchJobs.js",
+      "command": "node ./app/dist/deleteOldJobsAndFetchNewJobs.js",
       "schedule": "@monthly"
     }
   ]

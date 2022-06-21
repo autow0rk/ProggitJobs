@@ -58,3 +58,5 @@ const searchOptionsReactJSJobs : SearchOptions = {
   }
 
 }
+
+fetchJobs(); // called once when the TS server is initially run, and then is called later on from a cron job
