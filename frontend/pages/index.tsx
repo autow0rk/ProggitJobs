@@ -118,7 +118,7 @@ const Home: NextPage = () => {
 
   useEffect(() => {
     async function getJobData(){
-      await axios((process.env.PROD_API_BASE_URL ? process.env.PROD_API_BASE_URL : process.env.NEXT_PUBLIC_LOCAL_API_BASE_URL) + '/allJobs').then((res) => {
+      await axios(process.env.PROD_API_BASE_URL + '/allJobs').then((res) => {
         setJobData(res.data);
         setFilteredJobs(res.data.jobs);
       });
