@@ -2,7 +2,11 @@
   "cron": [
     {
       "command": "node ./app/dist/fetchJobs.js",
-      "schedule": "@daily"
+      "schedule": "@weekly"
+    }, 
+    {
+      "command": "node ./app/dist/fetchJobs.js",
+      "schedule": "@monthly"
     }
   ]
 }

@@ -22,13 +22,6 @@ let cors = require('cors');
 
 getSubredditFilters(prisma).then((subredditFilters) => {
     app.use(cors());
-    console.log('i got the subreddit filters: ', subredditFilters);
-
-    app.get('/', async (req:Request, res:Response) => {
-        console.log('before getting jobs');
-        await fetchJobs();
-        console.log('results posted');
-    });
     
     app.get('/allJobs', async (req:Request, res:Response) => {
         
