@@ -1,11 +1,8 @@
 import express = require("express");
 let app = express();
 import {Request, Response} from 'express';
-const snoowrap = require('snoowrap');
-import { Listing, Submission } from 'snoowrap';
-import fetchJobs from "./fetchJobs";
 import { PrismaClient } from "@prisma/client";
-import getSubredditFilters from './init';
+import Init from './init';
 
 const prisma = new PrismaClient();
 const port = 5000;
@@ -20,7 +17,7 @@ let cors = require('cors');
 
 
 
-getSubredditFilters(prisma).then((subredditFilters) => {
+Init(prisma).then((subredditFilters) => {
     app.use(cors());
     
     app.get('/allJobs', async (req:Request, res:Response) => {

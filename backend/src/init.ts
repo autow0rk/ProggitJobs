@@ -1,12 +1,14 @@
 import { Prisma, PrismaClient } from "@prisma/client";
 import deleteOldJobs from "./deleteOldJobs";
+import fetchJobs from "./fetchJobs";
 
-async function Init(prismaClient: PrismaClient<Prisma.PrismaClientOptions, never, Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined>): Promise<void>{
+async function Init(prismaClient: PrismaClient<Prisma.PrismaClientOptions, never, Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined>): Promise<string[]>/*Promise<void>*/{
     await deleteOldJobs(prismaClient);
-    await getSubredditFilters(prismaClient);
+    await fetchJobs();
+    return await getSubredditFilters(prismaClient);
 }
 
-async function getSubredditFilters(prismaClient: PrismaClient<Prisma.PrismaClientOptions, never, Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined>){
+async function getSubredditFilters(prismaClient: PrismaClient<Prisma.PrismaClientOptions, never, Prisma.RejectOnNotFound | Prisma.RejectPerOperation | undefined>): Promise<string[]>{
 
     // async function getSubredditFilterOptions(){
     // const subredditFilterOptions = await prismaClient.$queryRaw`SELECT DISTINCT fromSubreddit FROM Job`;
@@ -24,4 +26,4 @@ async function getSubredditFilters(prismaClient: PrismaClient<Prisma.PrismaClien
 
 }
 
-export default getSubredditFilters;
+export default Init;
