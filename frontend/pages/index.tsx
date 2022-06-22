@@ -15,10 +15,6 @@ type JobData = {
   subredditFilters: string[]
 }
 
-// const api = axios.create({
-//   baseURL: process.env.NEXT_PUBLIC_PROD_API_BASE_URL || "http://localhost:5000"
-// });
-
 axios.defaults.baseURL = process.env.NEXT_PUBLIC_PROD_API_BASE_URL || "http://localhost:5000";
 
 const Home: NextPage = () => {
@@ -146,28 +142,18 @@ const Home: NextPage = () => {
     
     <div className="min-h-screen w-screen bg-slate-100 pt-10 flex flex-col">
       {/*grid has 5 columns, filters take up 1st column, rest of content takes up the other 4 columns */}
-      {/* <div>
-       <Filter subredditNames={subredditNames}/>
-     </div> */}
       <div className="px-20 py-8 flex flex-col items-center justify-center">
-        {/* <div className="flex flex-col justify-center items-center"> */}
         <a href="http://localhost:3000" className="no-underline">
         <h1 className="text-[#FF6962] text-4xl text-center font-semibold">ProggitJobs</h1>
           </a>
-        
-        {/* </div> */}
       </div>
-      {/* <div className="bg-orange-400"> */}
         <Filter monthsSelected={monthsSelected} setMonthsSelected={setMonthsSelected} subredditFilters={jobData.subredditFilters} setSubredditFilters={setSubredditFilters} searchBody={searchBodyFilter} setSearchBody={setSearchBodyFilter}/>
-      {/* </div> */}
-
       <div className="flex flex-col gap-y-2 mt-2">
       {filteredJobs?.map((job: JobPosting, index: number) => {
         if(job.highlightedJobPostingDetails == null){
           return <JobCard key={Math.random()} job={job} jobBody={job.jobPostingDetails}/>
         }
         
-        // console.log('the html and string as array: ', job.highlightedJobPostingDetails.toString());
         return <JobCard key={Math.random()} job={job} jobBody={job.highlightedJobPostingDetails}/>
       })}
     </div>
