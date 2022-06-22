@@ -143,7 +143,7 @@ const Home: NextPage = () => {
     <div className="min-h-screen w-screen bg-slate-100 pt-10 flex flex-col">
       {/*grid has 5 columns, filters take up 1st column, rest of content takes up the other 4 columns */}
       <div className="px-20 py-8 flex flex-col items-center justify-center">
-        <a href="/" className="no-underline">
+        <a href={process.env.NEXT_PUBLIC_PROD_FRONTEND_BASE_URL ? process.env.NEXT_PUBLIC_PROD_FRONTEND_BASE_URL : "/"} className="no-underline">
         <h1 className="text-[#FF6962] text-4xl text-center font-semibold">ProggitJobs</h1>
           </a>
       </div>
