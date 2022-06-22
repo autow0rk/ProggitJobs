@@ -28,9 +28,6 @@ const Home: NextPage = () => {
   const [searchBodyFilter, setSearchBodyFilter] = useState<string>('');
   const [monthsSelected, setMonthsSelected] = useState<string[]>([]);
 
-
-
-
   function filterJobCards(): JobPosting[] | null{
     let jobsFilteredBySearchBody = filterBySearchBody(jobData?.jobs);
     if(jobsFilteredBySearchBody == null){
