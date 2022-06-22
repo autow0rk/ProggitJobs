@@ -145,8 +145,10 @@ const Home: NextPage = () => {
       {/*grid has 5 columns, filters take up 1st column, rest of content takes up the other 4 columns */}
       <div className="px-20 py-8 flex flex-col items-center justify-center">
         {/* <a href="/" className="no-underline"> */}
-        <Link href="/" className="cursor-pointer">
+        <Link href="/">
+          <a>
         <h1 className="text-[#FF6962] text-4xl text-center font-semibold">ProggitJobs</h1>
+        </a>
         </Link>
           {/* </a> */}
       </div>
