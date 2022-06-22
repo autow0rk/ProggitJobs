@@ -146,7 +146,7 @@ const Home: NextPage = () => {
       <div className="px-20 py-8 flex flex-col items-center justify-center">
         {/* <a href="/" className="no-underline"> */}
         <Link href="/">
-          <a>
+          <a className="no-underline">
         <h1 className="text-[#FF6962] text-4xl text-center font-semibold">ProggitJobs</h1>
         </a>
         </Link>
