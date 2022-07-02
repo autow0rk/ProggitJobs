@@ -4,9 +4,11 @@
 
 @layer components {
   html,
-  #__next,
-  body {
+  #__next {
     @apply h-full w-full;
+  }
+  body {
+    @apply min-h-full min-w-full;
   }
 }
 
