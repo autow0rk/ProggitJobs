@@ -132,6 +132,20 @@ const Home: NextPage = () => {
   useEffect(() => {
     setFilteredJobs(filterJobCards());
   }, [searchBodyFilter, monthsSelected, subredditFilters]);
+
+  function renderJobResults(){
+    if(filteredJobs == null){
+      return <h1 className="justify-self-center self-center text-4xl font-semibold pt-5">{"No jobs were found matching your description"}</h1>
+    }
+    return filteredJobs.map((job: JobPosting, index: number) => {
+      if(job.highlightedJobPostingDetails == null){
+        return <JobCard key={Math.random()} job={job} jobBody={job.jobPostingDetails}/>
+      }
+      return <JobCard key={Math.random()} job={job} jobBody={job.highlightedJobPostingDetails}/>
+  });
+}
+
+
   if(jobData == null) {
     return (
       <div>
@@ -150,13 +164,7 @@ const Home: NextPage = () => {
       </div>
         <Filter monthsSelected={monthsSelected} setMonthsSelected={setMonthsSelected} subredditFilters={jobData.subredditFilters} setSubredditFilters={setSubredditFilters} searchBody={searchBodyFilter} setSearchBody={setSearchBodyFilter}/>
       <div className="flex flex-col gap-y-2 mt-2">
-      {filteredJobs?.map((job: JobPosting, index: number) => {
-        if(job.highlightedJobPostingDetails == null){
-          return <JobCard key={Math.random()} job={job} jobBody={job.jobPostingDetails}/>
-        }
-        
-        return <JobCard key={Math.random()} job={job} jobBody={job.highlightedJobPostingDetails}/>
-      })}
+      {renderJobResults()}
     </div>
 
 

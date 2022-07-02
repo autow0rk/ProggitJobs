@@ -14,7 +14,7 @@ const SearchBody: FC<Props> = ({searchBody, setSearchBody}) => {
         setSearchBody(userInput);
     }
 
-    function test(e: FormEvent<HTMLFormElement>){
+    function submitBodySearch(e: FormEvent<HTMLFormElement>){
         e.preventDefault();
         filterJobsByBody(userSearchInput);
     }
@@ -31,8 +31,8 @@ return (
      </div>
         
         {/* <div className="bg-yellow-500 flex flex-col items-center justify-center w-1/2 h-20 max-h-80">        */}
-        <form className="mt-2 flex flex-col items-center justify-center w-full h-16 max-h-80" onSubmit={test}>
-        <input onChange={updateUserInput} value={userSearchInput} className="bg-[#FFFFF7] text-2xl font-bold px-2 rounded-lg border-2 w-1/2 h-full" type="text" id="searchBody"/>
+        <form className="mt-2 flex flex-col items-center justify-center w-full h-16 max-h-16" onSubmit={submitBodySearch}>
+        <input onChange={updateUserInput} value={userSearchInput} className="bg-[#FFFFF7] text-2xl font-bold px-2 rounded-lg border-2 h-16 max-h-16 w-1/2" type="text" id="searchBody"/>
         </form>
         {/* </div> */}
        

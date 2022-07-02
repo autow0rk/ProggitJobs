@@ -4,12 +4,17 @@
 
 @layer components {
   html,
+  body,
+  div#__next {
+    @apply h-full;
+  }
+  /* html,
   #__next {
     @apply h-full w-full;
   }
   body {
     @apply min-h-full min-w-full;
-  }
+  } */
 }
 
 a {
