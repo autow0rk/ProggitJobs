@@ -141,7 +141,7 @@ const Home: NextPage = () => {
   } else {
   return (
     
-    <div className="min-h-screen w-screen bg-slate-100 pt-10 flex flex-col">
+    <div className="h-full w-full bg-slate-100 pt-10 flex flex-col">
       {/*grid has 5 columns, filters take up 1st column, rest of content takes up the other 4 columns */}
       <div className="px-20 py-8 flex flex-col items-center justify-center">
         <a href={process.env.NEXT_PUBLIC_PROD_FRONTEND_BASE_URL ? process.env.NEXT_PUBLIC_PROD_FRONTEND_BASE_URL : "http://localhost:3000"} className="no-underline">
