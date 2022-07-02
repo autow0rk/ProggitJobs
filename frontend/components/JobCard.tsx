@@ -59,7 +59,7 @@ return (
         
         <div className="border-rounded rounded-md">
         <h1 className="bg-[#E3E3E3] px-4 py-2 rounded-t-md whitespace-nowrap overflow-hidden text-ellipsis">{job.jobTitle}</h1>
-        <p ref={bodyTextClipped} className="bg-[#FDFDFD] text-base py-2 px-2">{parse(jobBody)}</p> {/*h-[4.5rem] overflow-hidden*/}
+        <p ref={bodyTextClipped} className="bg-[#FDFDFD] text-base py-2 px-2 break-words">{parse(jobBody)}</p> {/*h-[4.5rem] overflow-hidden*/}
         <h2 className="bg-[#E3E3E3] px-4 py-2 rounded-b-md"><a href={job.url}>Original job post</a></h2>
         </div>
     </div>
